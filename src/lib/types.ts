@@ -1,37 +1,70 @@
-export type Adventure = {
+export type UserRole = "student" | "expert" | "teacher" | "admin";
+
+export type User = {
+  id: string;
+  name: string;
+  role: UserRole;
+  email: string;
+  avatarUrl?: string;
+  bio?: string;
+  education?: string;
+  subjects?: string[];
+  reputation: number;
+  badges: Badge[];
+  joinedAt: string;
+};
+
+export type Badge = {
+  id: string;
+  name: string;
+  icon: string;
+  description: string;
+};
+
+export type Subject = {
   id: string;
   name: string;
   description: string;
-  location: string;
-  category: "water" | "land" | "air" | "cultural";
-  price: number;
-  imageUrl: string;
+  icon: string;
+  topics: string[];
 };
 
-export type Accommodation = {
-  id: string;
-  name: string;
-  type: "hotel" | "hostel" | "room";
-  description: string;
-  location: string;
-  pricePerNight: number;
-  amenities: string[];
-  imageUrl: string;
-};
-
-export type Destination = {
-  id: string;
-  name: string;
-  description: string;
-  highlights: string[];
-  imageUrl: string;
-};
-
-export type TripPlan = {
+export type Question = {
   id: string;
   title: string;
-  destinations: string[];
-  startDate: string;
-  endDate: string;
-  activities: string[];
+  description: string;
+  authorId: string;
+  subjectId: string;
+  topic: string;
+  tags: string[];
+  attachments: string[];
+  difficulty: "easy" | "medium" | "hard";
+  status: "unsolved" | "solved";
+  createdAt: string;
+  views: number;
+  acceptedAnswerId?: string;
+};
+
+export type Answer = {
+  id: string;
+  questionId: string;
+  authorId: string;
+  content: string;
+  attachments: string[];
+  isAccepted: boolean;
+  votes: number;
+  createdAt: string;
+};
+
+export type AIInsight = {
+  id: string;
+  questionId: string;
+  type: "step-by-step" | "code-review" | "math-solver" | "summary";
+  content: string;
+  model: string;
+};
+
+export type CommunityStat = {
+  label: string;
+  value: string;
 };

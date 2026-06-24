@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "TRIPLY | Plan Your Next Adventure",
-  description: "Minimalist trip planning and booking platform.",
+  title: "HOMEWORK HELP | AI-Powered Learning Forum",
+  description: "A community-driven platform for homework help, expert guidance, and AI-assisted learning.",
 };
 
 export default function RootLayout({
