@@ -29,57 +29,68 @@ export default async function CollegesPage(props: {
   const locations = Array.from(new Set(colleges.map(c => c.location)));
 
   return (
-    <div className="py-12 px-8">
+    <div className="py-20 px-8 min-h-screen bg-white text-black dark:bg-black dark:text-white">
       <div className="max-w-7xl mx-auto">
-        <header className="mb-16">
-          <h1 className="text-4xl font-black uppercase tracking-tight mb-8">College Finder</h1>
+        <header className="mb-24">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+            <div className="max-w-2xl">
+              <h1 className="text-7xl font-black uppercase tracking-tighter leading-[0.8] mb-6">
+                FIND YOUR<br />FUTURE.
+              </h1>
+              <p className="text-lg opacity-60 uppercase font-medium tracking-tight">
+                Explore top-tier institutions, compare placements, and find the perfect academic fit for your journey.
+              </p>
+            </div>
+            <div className="text-right">
+              <span className="text-sm font-bold uppercase opacity-40">Total Results</span>
+              <p className="text-4xl font-black">{filteredColleges.length}</p>
+            </div>
+          </div>
 
-          <form className="grid grid-cols-1 md:grid-cols-5 gap-6 border-b border-black dark:border-white pb-8">
-            <div className="md:col-span-2">
-              <label className="block text-[10px] font-bold uppercase mb-2 opacity-50">Search</label>
+          <form className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-0 border border-black dark:border-white">
+            <div className="p-6 border-b md:border-b-0 md:border-r border-black dark:border-white lg:col-span-2">
+              <label className="block text-[10px] font-black uppercase mb-2 opacity-40 tracking-widest">Search</label>
               <input
                 name="q"
                 type="text"
                 placeholder="COLLEGE OR MAJOR..."
                 defaultValue={query}
-                className="bg-transparent border-none outline-none w-full text-lg uppercase font-bold tracking-tight"
+                className="bg-transparent border-none outline-none w-full text-xl uppercase font-black tracking-tighter placeholder:opacity-20"
               />
             </div>
 
-            <div>
-              <label className="block text-[10px] font-bold uppercase mb-2 opacity-50">Location</label>
+            <div className="p-6 border-b md:border-b-0 md:border-r border-black dark:border-white">
+              <label className="block text-[10px] font-black uppercase mb-2 opacity-40 tracking-widest">Location</label>
               <select
                 name="location"
                 defaultValue={locationFilter}
-                className="bg-transparent border-none outline-none w-full text-lg uppercase font-bold tracking-tight appearance-none"
+                className="bg-transparent border-none outline-none w-full text-xl uppercase font-black tracking-tighter appearance-none cursor-pointer"
               >
-                <option value="">ALL LOCATIONS</option>
+                <option value="">GLOBAL</option>
                 {locations.map(loc => (
                   <option key={loc} value={loc.toLowerCase()}>{loc.toUpperCase()}</option>
                 ))}
               </select>
             </div>
 
-            <div>
-              <label className="block text-[10px] font-bold uppercase mb-2 opacity-50">Max Tuition</label>
+            <div className="p-6 border-b md:border-b-0 md:border-r border-black dark:border-white">
+              <label className="block text-[10px] font-black uppercase mb-2 opacity-40 tracking-widest">Max Tuition</label>
               <input
                 name="maxTuition"
                 type="number"
                 placeholder="ANY"
                 defaultValue={searchParams.maxTuition}
-                className="bg-transparent border-none outline-none w-full text-lg uppercase font-bold tracking-tight"
+                className="bg-transparent border-none outline-none w-full text-xl uppercase font-black tracking-tighter placeholder:opacity-20"
               />
             </div>
 
-            <div className="flex items-end">
-              <button type="submit" className="w-full bg-black text-white dark:bg-white dark:text-black py-3 font-bold uppercase text-xs tracking-widest hover:opacity-90 transition-opacity">
-                Filter
-              </button>
-            </div>
+            <button type="submit" className="p-6 bg-black text-white dark:bg-white dark:text-black font-black uppercase text-sm tracking-widest hover:opacity-80 transition-all active:scale-95">
+              Refine Search
+            </button>
           </form>
         </header>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16">
           {filteredColleges.map((college) => (
             <Card
               key={college.id}
@@ -90,8 +101,8 @@ export default async function CollegesPage(props: {
             />
           ))}
           {filteredColleges.length === 0 && (
-            <div className="col-span-full py-20 text-center opacity-50 uppercase font-bold">
-              No colleges found matching your criteria.
+            <div className="col-span-full py-32 text-center border border-dashed border-black dark:border-white opacity-40">
+              <p className="text-sm font-black uppercase tracking-widest">No institutions match your current filters.</p>
             </div>
           )}
         </div>
