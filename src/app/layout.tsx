@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "TRIPLY | Plan Your Next Adventure",
-  description: "Minimalist trip planning and booking platform.",
+  title: "EduNavigator AI | Smart University & College Finder",
+  description: "AI-powered university and college finder portal.",
 };
 
 export default function RootLayout({

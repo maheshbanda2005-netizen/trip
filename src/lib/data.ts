@@ -1,4 +1,4 @@
-import { Adventure, Accommodation, Destination } from "./types";
+import { Adventure, Accommodation, Destination, College } from "./types";
 
 export const destinations: Destination[] = [
   {
@@ -77,5 +77,56 @@ export const accommodations: Accommodation[] = [
     pricePerNight: 2000,
     amenities: ["Breakfast", "Garden"],
     imageUrl: "/hotels/homestay.jpg",
+  },
+];
+
+export const colleges: College[] = [
+  {
+    id: "c1",
+    name: "Tech University of Hyderabad",
+    location: "Hyderabad",
+    description: "A leading institution for engineering and technology studies with state-of-the-art labs and research facilities.",
+    tuition: 150000,
+    majors: ["Computer Science", "Electronics", "Mechanical Engineering"],
+    imageUrl: "/colleges/tech-uni.jpg",
+    ranking: 15,
+    accreditation: "NAAC A++",
+    placementRate: 95,
+    highestPackage: 4500000,
+    facilities: ["High-speed Wi-Fi", "Modern Labs", "Digital Library", "Sports Complex"],
+    established: 1995,
+    website: "https://tuh.edu.in",
+  },
+  {
+    id: "c2",
+    name: "Coastal Institute of Arts",
+    location: "Goa",
+    description: "A premier college for fine arts and design located near the coast, offering a creative environment for aspiring artists.",
+    tuition: 80000,
+    majors: ["Visual Arts", "Design", "Art History"],
+    imageUrl: "/colleges/arts-inst.jpg",
+    ranking: 8,
+    accreditation: "NAAC A",
+    placementRate: 85,
+    highestPackage: 1200000,
+    facilities: ["Art Studios", "Gallery", "Open-air Theatre", "Hostel"],
+    established: 2005,
+    website: "https://coastalarts.edu.in",
+  },
+  {
+    id: "c3",
+    name: "Global Business School",
+    location: "Hyderabad",
+    description: "Excellence in business management and entrepreneurship, preparing future leaders for the global market.",
+    tuition: 250000,
+    majors: ["Business Administration", "Finance", "Marketing"],
+    imageUrl: "/colleges/business-school.jpg",
+    ranking: 20,
+    accreditation: "EQUIS",
+    placementRate: 98,
+    highestPackage: 6000000,
+    facilities: ["Business Hub", "Auditorium", "Global Networking Center", "Premium Hostel"],
+    established: 2010,
+    website: "https://gbs-global.edu.in",
   },
 ];
