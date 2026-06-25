@@ -7,9 +7,12 @@ export default function Navbar() {
         HOMEWORK HELP
       </Link>
       <div className="flex gap-8 items-center">
-        <Link href="/subjects" className="text-sm font-medium hover:underline text-black dark:text-white uppercase">Subjects</Link>
         <Link href="/questions" className="text-sm font-medium hover:underline text-black dark:text-white uppercase">Questions</Link>
-        <Link href="/ask" className="text-sm font-medium hover:underline text-black dark:text-white uppercase">Ask Question</Link>
+        <Link href="/ask" className="text-sm font-medium hover:underline text-black dark:text-white uppercase">Ask</Link>
+        <Link href="/vault" className="text-sm font-medium hover:underline text-black dark:text-white uppercase">Vault</Link>
+        <Link href="/knowledge-graph" className="text-sm font-medium hover:underline text-black dark:text-white uppercase">Graph</Link>
+        <Link href="/lab" className="text-sm font-medium hover:underline text-black dark:text-white uppercase">Lab</Link>
+        <Link href="/dashboard" className="text-sm font-medium hover:underline text-black dark:text-white uppercase">Dashboard</Link>
         <Link href="/profile" className="text-sm font-medium hover:underline text-black dark:text-white uppercase font-bold border border-black dark:border-white px-3 py-1">Profile</Link>
       </div>
     </nav>

@@ -33,18 +33,31 @@ export default function AskQuestionPage() {
             <h2 className="text-xl font-black uppercase tracking-tight">Provide more details</h2>
           </div>
           <div className="space-y-2">
-            <textarea
-              placeholder="DESCRIBE YOUR PROBLEM IN DETAIL. INCLUDE WHAT YOU HAVE TRIED SO FAR..."
-              className="w-full bg-transparent border-2 border-black dark:border-white p-4 text-sm font-bold focus:outline-none uppercase h-48"
-            ></textarea>
-            <div className="flex gap-4">
+            <div className="relative group">
+              <textarea
+                placeholder="DESCRIBE YOUR PROBLEM IN DETAIL. INCLUDE WHAT YOU HAVE TRIED SO FAR..."
+                className="w-full bg-transparent border-2 border-black dark:border-white p-4 text-sm font-bold focus:outline-none uppercase h-48"
+              ></textarea>
+              <div className="absolute right-4 bottom-4 flex gap-2">
+                 <button type="button" className="w-10 h-10 border border-black dark:border-white bg-white dark:bg-black flex items-center justify-center hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all" title="Voice Input (Speech-to-Text)">
+                   🎤
+                 </button>
+              </div>
+            </div>
+            <div className="flex flex-wrap gap-4">
               <button type="button" className="text-[10px] font-black uppercase border border-black dark:border-white px-4 py-2 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all">
                 📎 Attach Image/PDF
+              </button>
+              <button type="button" className="text-[10px] font-black uppercase border-2 border-black dark:border-white px-4 py-2 bg-black text-white dark:bg-white dark:text-black hover:opacity-80 transition-all flex items-center gap-2">
+                📸 <span>Scan Homework (AI OCR)</span>
               </button>
               <button type="button" className="text-[10px] font-black uppercase border border-black dark:border-white px-4 py-2 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all">
                 {'</>'} Add Code Snippet
               </button>
             </div>
+            <p className="text-[9px] font-bold uppercase opacity-50 mt-2 italic">
+               Our AI can read handwritten notes and transcribe voice questions automatically.
+            </p>
           </div>
         </section>
 
