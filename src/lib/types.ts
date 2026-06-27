@@ -35,3 +35,20 @@ export type TripPlan = {
   endDate: string;
   activities: string[];
 };
+
+export type College = {
+  id: string;
+  name: string;
+  location: string;
+  description: string;
+  tuition: number;
+  majors: string[];
+  imageUrl: string;
+  ranking?: number;
+  accreditation?: string;
+  placementRate?: number;
+  highestPackage?: number;
+  facilities?: string[];
+  established?: number;
+  website?: string;
+};

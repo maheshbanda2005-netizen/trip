@@ -1,6 +1,6 @@
 import Button from "@/components/Button";
 import Card from "@/components/Card";
-import { destinations, adventures } from "@/lib/data";
+import { destinations, adventures, colleges } from "@/lib/data";
 import Link from "next/link";
 
 export default function Home() {
@@ -19,6 +19,9 @@ export default function Home() {
           <div className="flex flex-wrap gap-4">
             <Link href="/explore">
               <Button>Explore Adventures</Button>
+            </Link>
+            <Link href="/colleges">
+              <Button variant="secondary">Find Colleges</Button>
             </Link>
             <Link href="/planner">
               <Button variant="secondary">Start Planning</Button>
@@ -49,7 +52,7 @@ export default function Home() {
       </section>
 
       {/* Featured Adventures */}
-      <section className="py-20 px-8">
+      <section className="py-20 px-8 border-b border-black dark:border-white">
         <div className="max-w-7xl mx-auto">
           <div className="flex justify-between items-end mb-12">
             <h2 className="text-3xl font-black uppercase tracking-tight">Adventures</h2>
@@ -63,6 +66,27 @@ export default function Home() {
                 description={adv.description}
                 href={`/adventure/${adv.id}`}
                 footer={`${adv.category} • $${adv.price}`}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Colleges */}
+      <section className="py-20 px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex justify-between items-end mb-12">
+            <h2 className="text-3xl font-black uppercase tracking-tight">Colleges</h2>
+            <Link href="/colleges" className="text-xs font-bold uppercase underline">View All</Link>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {colleges.slice(0, 3).map((college) => (
+              <Card
+                key={college.id}
+                title={college.name}
+                description={college.description}
+                href={`/colleges/${college.id}`}
+                footer={`${college.location} • $${college.tuition.toLocaleString()}`}
               />
             ))}
           </div>
