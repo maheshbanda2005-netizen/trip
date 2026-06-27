@@ -14,6 +14,13 @@ export default function Navbar() {
         <Link href="/lab" className="text-sm font-medium hover:underline text-black dark:text-white uppercase">Lab</Link>
         <Link href="/dashboard" className="text-sm font-medium hover:underline text-black dark:text-white uppercase">Dashboard</Link>
         <Link href="/profile" className="text-sm font-medium hover:underline text-black dark:text-white uppercase font-bold border border-black dark:border-white px-3 py-1">Profile</Link>
+        EduNavigator AI
+      </Link>
+      <div className="flex gap-8 items-center">
+        <Link href="/explore" className="text-sm font-medium hover:underline text-black dark:text-white uppercase">Explore</Link>
+        <Link href="/colleges" className="text-sm font-medium hover:underline text-black dark:text-white uppercase">Colleges</Link>
+        <Link href="/accommodations" className="text-sm font-medium hover:underline text-black dark:text-white uppercase">Stays</Link>
+        <Link href="/planner" className="text-sm font-medium hover:underline text-black dark:text-white uppercase">Planner</Link>
       </div>
     </nav>
   );

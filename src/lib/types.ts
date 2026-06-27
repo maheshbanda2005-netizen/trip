@@ -68,3 +68,20 @@ export type CommunityStat = {
   label: string;
   value: string;
 };
+
+export type College = {
+  id: string;
+  name: string;
+  location: string;
+  description: string;
+  tuition: number;
+  majors: string[];
+  imageUrl: string;
+  ranking?: number;
+  accreditation?: string;
+  placementRate?: number;
+  highestPackage?: number;
+  facilities?: string[];
+  established?: number;
+  website?: string;
+};

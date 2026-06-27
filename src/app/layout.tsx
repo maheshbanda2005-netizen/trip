@@ -17,6 +17,8 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "HOMEWORK HELP | AI-Powered Learning Forum",
   description: "A community-driven platform for homework help, expert guidance, and AI-assisted learning.",
+  title: "EduNavigator AI | Smart University & College Finder",
+  description: "AI-powered university and college finder portal.",
 };
 
 export default function RootLayout({
